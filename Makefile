@@ -1,3 +1,8 @@
+KERNELDIR ?= /lib/modules/$(shell uname -r)/build
+
+build:
+	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules
+
 obj-$(CONFIG_MAC80211) += mac80211.o
 
 # mac80211 objects
